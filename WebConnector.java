@@ -12,6 +12,7 @@ import java.io.PrintWriter;
  */
 public class WebConnector {
 
+// too much stuff here
     public static void main(String [ ] args) throws Exception {
 
         Connector urlReader = new Connector();
@@ -32,6 +33,7 @@ public class WebConnector {
 
         String result = csvOutput.makeResultString(jArray).toString();
 
+// exttract to other class
         PrintWriter printWriter = new PrintWriter(new FileWriter(AppData.fileName));
         printWriter.write(result);
         printWriter.close();
