@@ -12,12 +12,19 @@ public class TextReader {
     private String textLine;
 
     public String getStringData(HttpURLConnection connection) throws IOException {
-        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-        do {
-            textLine = in.readLine();
-        } while(in.readLine() != null);
-
-        in.close();
+        
+        BufferedReader in;
+        try {
+            in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            do {
+                textLine = in.readLine();
+            } while(in.readLine() != null);
+        } finally {
+            if (in != null) {
+                in.close();
+            }
+        }
+     
         return textLine;
     }
 }
