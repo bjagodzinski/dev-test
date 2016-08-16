@@ -6,8 +6,15 @@ import org.json.simple.JSONObject;
 /**
  * Created by Rafal on 2016-08-09.
  */
+// Make more meaningful class names
 public class CSVCreator {
+    
+    // Do we really need theese members?
+    
     private String columnList;
+    
+    // Object is unstable -> current state is depending on previus states
+    // WRONG DESIGN!
     private StringBuilder resultString;
 
     public CSVCreator() {
