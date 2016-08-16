@@ -18,6 +18,7 @@ public class Connector implements Connectable {
 
     public void setConnectionURL(String URLSpecifier) throws IOException {
         this.connectionURL = new URL(AppData.baseURL + URLSpecifier);
+        // do not do extra stuff
         setConnection();
     }
 
@@ -29,9 +30,12 @@ public class Connector implements Connectable {
         this.connection = (HttpURLConnection) connectionURL.openConnection();
     }
 
+    // use small letters
     public void URLConnect() throws IOException {
         connection.connect();
     }
+    
+    // use small letters
     public void URLDisconnect() {
         connection.disconnect();
     }
